@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equinos & Tack | Artículos Ecuestres Hechos a Mano</title>
+  <meta name="description" content="Cabrestos, frenos y equipos ecuestres artesanales. Cabrestos acolchados, frenos bordados y personalización con nombre bordado.">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-brand" href="#inicio">
+        Equinos & Tack
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarLinks">
+        <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+        <a href="#" class="whatsapp-link btn btn-whatsapp" target="_blank" rel="noreferrer">
+          <i class="bi bi-whatsapp"></i> Pedir ahora
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="inicio" class="hero-header text-white text-center">
+    <div class="hero-overlay"></div>
+    <img src="./img/14.jpeg" alt="Caballo de paso fino en presentación" class="hero-bg-img">
+    <div class="container position-relative py-5">
+      <div class="py-5">
+        <span class="badge-pill mb-3">Artículos Ecuestres · Hecho a Mano</span>
+        <h1 class="display-5 fw-bold mb-3">Equipo para caballos de élite</h1>
+        <p class="lead mb-4 mx-auto" style="max-width:34rem;">
+          Cabrestos, frenos y equipos artesanales elaborados con los mejores materiales
+          para tu caballo, con opción de personalización con nombre bordado.
+        </p>
+        <a href="#productos" class="btn btn-brand btn-lg me-2">Ver productos</a>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-md-6">
+          <img src="./img/12.jpeg" class="img-fluid rounded shadow-sm" alt="Equipo completo de montura">
+        </div>
+        <div class="col-md-6">
+          <h2 class="fw-bold text-brand">Quiénes somos</h2>
+          <p class="text-secondary">
+            Somos artesanos dedicados a la elaboración de cabrestos, frenos y equipos
+            ecuestres a la medida. Trabajamos con cuero, nylon y fibras trenzadas de
+            primera calidad, para caballos criollos, de paso fino y de trabajo.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section id="productos" class="bg-light py-5">
+    <div class="container">
+      <h2 class="fw-bold text-brand text-center mb-4">Nuestros productos</h2>
+      <div class="row g-4" id="productsGrid"><!-- generado por JS --></div>
+    </div>
+  </section>
+
+  <!-- Modal de producto -->
+  <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="pmTitle"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <img id="pmImg" src="" alt="" class="w-100" style="max-height:220px; object-fit:cover;">
+        <div class="modal-body">
+          <p id="pmDesc" class="text-secondary"></p>
+          <p class="fw-semibold">Detalles:</p>
+          <ul id="pmItems" class="list-unstyled"></ul>
+        </div>
+        <div class="modal-footer">
+          <a href="#" class="whatsapp-link btn btn-whatsapp" target="_blank" rel="noreferrer">
+            <i class="bi bi-whatsapp"></i> Consultar precio
+          </a>
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALERÍA -->
+  <section id="galeria" class="py-5">
+    <div class="container">
+      <h2 class="fw-bold text-brand text-center mb-4">Galería</h2>
+      <div id="photoCarousel" class="carousel slide mx-auto" style="max-width:600px;" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="0" class="active" aria-label="Foto 1"></button>
+          <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="1" aria-label="Foto 2"></button>
+          <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="2" aria-label="Foto 3"></button>
+          <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="3" aria-label="Foto 4"></button>
+          <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="4" aria-label="Foto 5"></button>
+          <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="5" aria-label="Foto 6"></button>
+        </div>
+        <div class="carousel-inner rounded shadow-sm">
+          <div class="carousel-item active">
+            <img src="./img/14.jpeg" class="d-block w-100" style="height:360px; object-fit:cover;" alt="Caballo de paso fino en presentación">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/1.jpeg" class="d-block w-100" style="height:360px; object-fit:cover;" alt="Caballo con cabresto rojo">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/10.jpeg" class="d-block w-100" style="height:360px; object-fit:cover;" alt="Cabrestos con nombre bordado">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/9.jpeg" class="d-block w-100" style="height:360px; object-fit:cover;" alt="Cabresto bordado personalizado">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/7.jpeg" class="d-block w-100" style="height:360px; object-fit:cover;" alt="Cabresto azul personalizado">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/4.jpeg" class="d-block w-100" style="height:360px; object-fit:cover;" alt="Freno con rienda de cuerda blanca">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="bg-light py-5">
+    <div class="container">
+      <h2 class="fw-bold text-brand text-center mb-4">Contáctanos</h2>
+      <div class="row justify-content-center text-center g-4">
+        <div class="col-6 col-md-3">
+          <i class="bi bi-geo-alt-fill text-brand fs-3"></i>
+          <p class="mb-0 fw-semibold mt-2">Dirección</p>
+          <p class="text-secondary small">Calle 45 # 32-18, El Poblado<br>Medellín</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <i class="bi bi-clock-fill text-brand fs-3"></i>
+          <p class="mb-0 fw-semibold mt-2">Horarios</p>
+          <p class="text-secondary small">Lun–Sáb: 8:00am–6:00pm</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <i class="bi bi-telephone-fill text-brand fs-3"></i>
+          <p class="mb-0 fw-semibold mt-2">Teléfono</p>
+          <p class="text-secondary small">+57 3156177016</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <i class="bi bi-envelope-fill text-brand fs-3"></i>
+          <p class="mb-0 fw-semibold mt-2">Correo</p>
+          <p class="text-secondary small">jimenezarteagav394@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="#" class="whatsapp-link btn btn-whatsapp whatsapp-fab" target="_blank" rel="noreferrer" title="WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const WHATSAPP_NUMBER = '573156177016';
+    document.querySelectorAll('.whatsapp-link').forEach(el => {
+      el.href = `https://wa.me/${WHATSAPP_NUMBER}`;
+    });
+
+    const CATEGORIES = [
+      {
+        name: 'Cabresto Acolchado',
+        short: 'Nylon reforzado con borreguillo suave.',
+        description: 'Cabresto en nylon de alta resistencia con forro acolchado para mayor comodidad del caballo.',
+        items: ['Colores personalizables', 'Cabestro trenzado incluido', 'Herrajes en acero inoxidable'],
+        img: './img/9.jpeg'
+      },
+      {
+        name: 'Freno Tradicional Bordado',
+        short: 'Cabresto y freno con bordado multicolor.',
+        description: 'Freno y cabezada con detalles bordados en hilo multicolor al estilo tradicional, ideal para exhibición.',
+        items: ['Bordado a mano', 'Herrajes en acero inoxidable', 'Disponible en varios colores'],
+        img: './img/4.jpeg'
+      },
+      {
+        name: 'Equipo Completo de Montura',
+        short: 'Silla, cabezada y accesorios a juego.',
+        description: 'Set completo de montura artesanal en cuero: silla, cabezada con freno, riendas trenzadas y accesorios a juego.',
+        items: ['Silla en cuero repujado', 'Cabezada y riendas trenzadas', 'Alforjas incluidas'],
+        img: './img/5.jpeg'
+      },
+      {
+        name: 'Cabresto Personalizado',
+        short: 'Nombre bordado en el cabresto.',
+        description: 'Cabresto acolchado con nombre del equino bordado en hilo de color, ideal como regalo o para caballo de competencia.',
+        items: ['Nombre bordado a elección', 'Forro de borreguillo', 'Disponible en varios colores'],
+        img: './img/10.jpeg'
+      },
+      {
+        name: 'Freno con Riendas Trenzadas',
+        short: 'Riendas trenzadas y bocado suave.',
+        description: 'Freno con cabezada bordada y riendas de cuerda trenzada, compatible con caballos de diferentes tamaños.',
+        items: ['Riendas trenzadas a mano', 'Bocado de acero inoxidable', 'Cabezada bordada'],
+        img: './img/2.jpeg'
+      },
+      {
+        name: 'Freno para Mulas y Caballos de Trabajo',
+        short: 'Resistente para uso diario.',
+        description: 'Freno reforzado en cuero, diseñado para el trabajo diario en mulas y caballos de carga.',
+        items: ['Cuero resistente', 'Riendas trenzadas', 'Ideal para trabajo de campo'],
+        img: './img/6.jpeg'
+      }
+    ];
+
+    const grid = document.getElementById('productsGrid');
+    CATEGORIES.forEach((cat, i) => {
+      grid.innerHTML += `
+        <div class="col-sm-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img src="${cat.img}" class="card-img-top" alt="${cat.name}">
+            <div class="card-body">
+              <h5 class="card-title">${cat.name}</h5>
+              <p class="card-text text-secondary small">${cat.short}</p>
+              <button class="btn btn-sm btn-outline-primary" data-cat-index="${i}">Ver más</button>
+            </div>
+          </div>
+        </div>`;
+    });
+
+    const productModal = new bootstrap.Modal(document.getElementById('productModal'));
+    document.addEventListener('click', e => {
+      const btn = e.target.closest('[data-cat-index]');
+      if (!btn) return;
+      const cat = CATEGORIES[btn.dataset.catIndex];
+      document.getElementById('pmImg').src = cat.img;
+      document.getElementById('pmTitle').textContent = cat.name;
+      document.getElementById('pmDesc').textContent = cat.description;
+      document.getElementById('pmItems').innerHTML = cat.items
+        .map(it => `<li><i class="bi bi-check2 text-brand-green me-2"></i>${it}</li>`).join('');
+      productModal.show();
+    });
+
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+:root {
+  --brand: #c0603a;
+  --brand-dark: #8f4326;
+  --brand-green: #2da87a;
+  --whatsapp: #25d366;
+  --ink: #1a1714;
+  --ink-muted: #7a746e;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+}
+body {
+  padding-top: 70px;
+  font-family: var(--font-body);
+  color: var(--ink);
+}
+h1, h2, h3, .navbar-brand {
+  font-family: var(--font-display);
+}
+/* ==========================================================================
+   Colores de marca
+   ========================================================================== */
+.text-brand { color: var(--brand) !important; }
+.text-brand-green { color: var(--brand-green) !important; }
+.btn-brand { background-color: var(--brand); color: #fff; border: none; }
+.btn-brand:hover { background-color: var(--brand-dark); color: #fff; }
+.btn-whatsapp { background-color: var(--whatsapp); color: #fff; border: none; }
+.btn-whatsapp:hover { background-color: #1ebe5a; color: #fff; }
+.brand-badge {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background: var(--brand);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero-header {
+  position: relative;
+  overflow: hidden;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26,23,20,0.78) 0%, rgba(26,23,20,0.35) 100%);
+  z-index: 1;
+}
+.hero-header .container { z-index: 2; }
+.badge-pill {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(192, 96, 58, 0.3);
+  color: #f5c9b3;
+  border: 1px solid rgba(192, 96, 58, 0.5);
+}
+/* ==========================================================================
+   Productos
+   ========================================================================== */
+.card-img-top { height: 200px; object-fit: cover; }
+.card {
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08) !important;
+}
+/* ==========================================================================
+   Botón flotante de WhatsApp
+   ========================================================================== */
+.whatsapp-fab {
+  position: fixed;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  z-index: 1040;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+/* ==========================================================================
+   Navbar
+   ========================================================================== */
+.navbar-brand { font-size: 1.1rem; }
+.nav-link:hover { color: var(--brand) !important; }
